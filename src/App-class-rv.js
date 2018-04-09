@@ -74,10 +74,14 @@ class App extends Component {
 }
 
 // Connecting the App Component to Redux
-// Use a mapStateToProps function that takes in state and returns 'state' 
-// 'State' as a parameter is everything in the redux store
+// Use a mapStateToProps function that takes in state and returns 'state'
 function mapStateToProps( state ) {
-  return state;
+    // This is using object.assign to merge the objects
+    // This return allows you to pick what you want to return from the redux store. 
+  return { currentValue: state.currentValue,
+    // Example of picking 
+    myName: state.myName
+}
 }
 
 // Use connects mapDispatchToProps to place the action creators on App's props!
